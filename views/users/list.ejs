@@ -1,0 +1,57 @@
+<%include ../layout/header %>
+
+    <title>List users</title>
+    <style>
+      body {background-color: cadetblue}
+      h1 {
+        color: beige;
+        font-style: italic;
+        font-family: serif;
+        font-size: 120px;
+        text-align: center;
+      }
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 70%;
+        margin-left: 140px;
+      }
+
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>List Users</h1>
+    <form class="" action="/users/list" method="post">
+      <table>
+        <tr>
+          <th><p>Name</p></th>
+          <th><p>Address</p></th>
+          <th><p>College</p></th>
+          <th><p>Age</p></th>
+          <th><p>Delete</p></th>
+          <th><p>Edit</p></th>
+        </tr>
+        <% userData.forEach(function(user){ %>
+          <tr>
+             <td><p><%= user.name%></p></td>
+             <td><p><%= user.address%></p></td>
+             <td><p><%= user.college%></p></td>
+             <td><p><%= user.age%></p></td>
+             <td><a href="/users/delete/<%=user.name%>">Delete</a></td>
+             <td><a href="/users/edit/<%=user.name%>">Edit</a></td>
+          </tr>
+        <% })%>
+
+      </table>
+    </form>
+  </body>
+</html>

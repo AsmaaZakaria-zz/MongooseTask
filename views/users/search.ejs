@@ -1,0 +1,50 @@
+<%include ../layout/header %>
+<title>Search for User</title>
+<style>
+  body {background-color: cadetblue}
+  h6  {
+    font-size: 30px;
+    font-family: serif;
+    color: beige;
+  }
+  input {
+    border-radius: 5px;
+    padding: 5px;
+  }
+</style>
+
+    <form class="" action="/users/search" method="post">
+      <table>
+        <tr>
+          <tr>
+            <td><h6>Name</h6><input type="text" name="Name" value=""></td>
+            <td><h6>Search</h6><input type="submit" value="search"></td>
+          </tr>
+        </tr>
+      </table>
+    </form>
+
+    <table>
+      <tr>
+        <th><p>Name</p></th>
+        <th><p>Address</p></th>
+        <th><p>College</p></th>
+        <th><p>Age</p></th>
+        <th><p>Delete</p></th>
+        <th><p>Edit</p></th>
+      </tr>
+      <% userData.forEach(function(user){ %>
+        <tr>
+           <td><p><%= user.name%></p></td>
+           <td><p><%= user.address%></p></td>
+           <td><p><%= user.college%></p></td>
+           <td><p><%= user.age%></p></td>
+           <td><a href="/users/delete/<%=user.name%>">Delete</a></td>
+           <td><a href="/users/edit/<%=user.name%>">Edit</a></td>
+        </tr>
+      <% })%>
+
+    </table>
+
+  </body>
+</html>

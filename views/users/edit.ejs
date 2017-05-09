@@ -1,0 +1,30 @@
+<%include ../layout/header %>
+<title>Edit</title>
+<style>
+  body {background-color: cadetblue}
+  h6  {
+    font-size: 30px;
+    font-family: serif;
+    color: beige;
+  }
+  input {
+    border-radius: 5px;
+    padding: 5px;
+  }
+</style>
+
+    <form class="" action="/users/edit" method="post">
+      <table>
+        <tr>
+          <tr>
+            <td><h6>Name</h6><input type="text" name="Name" value="" required></td>
+            <td><h6>Address</h6><input type="text" name="Address" value="" required></td>
+            <td><h6>College</h6><input type="text" name="College" value="" required></td>
+            <td><h6>Age</h6><input type="text" name="Age" value="" required></td>
+            <td><h6>Edit</h6><input type="submit" value="edit"></td>
+          </tr>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
